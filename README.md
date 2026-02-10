@@ -1,6 +1,6 @@
 # Boozin Fitness
 
-Flutter app: **today’s steps** and **active calories** with progress to 15,000 steps / 1,000 kcal. GetX + `health` (Health Connect on Android, Apple Health on iOS).
+Shows today’s steps and active calories with progress toward 15,000 steps and 1,000 kcal. Uses GetX for state/routing and the `health` package (Health Connect on Android, Apple Health on iOS).
 
 ## Routes
 
@@ -33,7 +33,7 @@ lib/
 - **modules:** per-feature bindings, constants, controllers, views, widgets.
 - **routes:** GetPage list + path strings; bindings per page.
 
-## Hard logic
+## How it works
 
 **Splash** (`SplashController` + `SplashConstants`): Start delay 1200ms → pin animation → logo fade (after 200ms) → “Fitness” text when pin completes. After total 3700ms, `Get.offAllNamed(Routes.HOME)`. All delays/callbacks check `!isClosed` before acting.
 
@@ -45,12 +45,11 @@ lib/
 
 **Bindings:** Splash → SplashController. Home → HealthProvider, then HomeController(HealthProvider).
 
-## Tech stack & architecture
+## Stack
 
-- Flutter ^3.10.1, GetX (state, routing, bindings), `health` ^13.3.1, Material 3 (system theme).
-- One controller per screen; `HealthProvider` is sole health entry; views → controllers → HealthProvider.
+Flutter 3.10+, GetX (state, routing, bindings), `health` for steps/calories, Material 3. One controller per screen; `HealthProvider` is the single place that talks to the health APIs.
 
-## Run & reference
+## Run
 
 - **Prerequisites:** Flutter SDK, Android Studio / Xcode. `flutter pub get`.
 - **Android:** `flutter run` (API 26+). Health Connect required for real data.

@@ -2,7 +2,7 @@
 abstract final class SplashConstants {
   SplashConstants._();
 
-  // ─── Timing (milliseconds) ───────────────────────────────────────────────
+  // Timing (milliseconds)
 
   /// Delay before pin animation starts.
   static const int startDelayMs = 1200;
@@ -29,7 +29,7 @@ abstract final class SplashConstants {
   static const int totalSplashDurationMs =
       startDelayMs + displayDurationMs + redirectDelayMs;
 
-  // ─── Layout (factors of screen size) ───────────────────────────────────────
+  // Layout (factors of screen size)
 
   /// Logo/pin image height as factor of screen width (e.g. 0.2 = 20%).
   static const double imageHeightFactor = 0.2;
@@ -40,7 +40,7 @@ abstract final class SplashConstants {
   /// Tagline vertical position as factor of screen height (e.g. 0.565 = 56.5%).
   static const double taglineTopFactor = 0.565;
 
-  // ─── Copy ─────────────────────────────────────────────────────────────────
+  // Copy
 
   /// Tagline text shown on splash (e.g. "Fitness").
   static const String tagline = 'Fitness';
